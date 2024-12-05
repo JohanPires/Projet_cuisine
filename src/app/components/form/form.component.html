@@ -1,0 +1,158 @@
+<div class="max-w-4xl mx-auto mt-10 p-8 bg-[#F5F3E6] rounded-lg shadow-lg">
+  <h1 class="text-2xl font-bold text-[#800020] mb-6 text-center">
+    Ajouter une Recette
+  </h1>
+  <form class="space-y-6" [formGroup]="recetteForm" (ngSubmit)="onSubmit()">
+    <!-- Nom de la recette -->
+    <div>
+      <label for="nom" class="block text-[#4A4A4A] font-semibold mb-2">
+        Nom de la recette
+      </label>
+      <input
+        id="nom"
+        type="text"
+        placeholder="Exemple : Tarte aux pommes"
+        class="w-full border border-[#D1965C] rounded-lg p-3 focus:ring focus:ring-[#D1965C]"
+        formControlName="nom"
+      />
+    </div>
+
+    <!-- Description -->
+    <div>
+      <label for="description" class="block text-[#4A4A4A] font-semibold mb-2">
+        Description
+      </label>
+      <textarea
+        id="description"
+        rows="4"
+        placeholder="Étapes détaillées..."
+        class="w-full border border-[#D1965C] rounded-lg p-3 focus:ring focus:ring-[#D1965C]"
+        formControlName="description"
+      ></textarea>
+    </div>
+
+    <!-- Liste d'ingrédients -->
+    <div>
+      <label for="ingredients" class="block text-[#4A4A4A] font-semibold mb-2">
+        Liste des ingrédients
+      </label>
+      <textarea
+        id="ingredients"
+        rows="3"
+        placeholder="Exemple : 200g de farine, 3 œufs..."
+        class="w-full border border-[#D1965C] rounded-lg p-3 focus:ring focus:ring-[#D1965C]"
+        formControlName="ingredients"
+      ></textarea>
+    </div>
+
+    <!-- Temps de préparation et de cuisson -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div>
+        <label
+          for="preparation"
+          class="block text-[#4A4A4A] font-semibold mb-2"
+        >
+          Temps de préparation (minutes)
+        </label>
+        <input
+          id="preparation"
+          type="number"
+          placeholder="Exemple : 20"
+          class="w-full border border-[#D1965C] rounded-lg p-3 focus:ring focus:ring-[#D1965C]"
+          formControlName="preparation"
+        />
+      </div>
+      <div>
+        <label for="cuisson" class="block text-[#4A4A4A] font-semibold mb-2">
+          Temps de cuisson (minutes)
+        </label>
+        <input
+          id="cuisson"
+          type="number"
+          placeholder="Exemple : 30"
+          class="w-full border border-[#D1965C] rounded-lg p-3 focus:ring focus:ring-[#D1965C]"
+          formControlName="cuisson"
+        />
+      </div>
+    </div>
+
+    <!-- Difficulté -->
+    <div>
+      <label class="block text-[#4A4A4A] font-semibold mb-2">Difficulté</label>
+      <div class="flex items-center space-x-4">
+        <label class="flex items-center text-[#4A4A4A]">
+          <input
+            type="radio"
+            name="difficulte"
+            value="facile"
+            class="mr-2"
+            formControlName="difficulte"
+          />
+          Facile
+        </label>
+        <label class="flex items-center text-[#4A4A4A]">
+          <input
+            type="radio"
+            name="difficulte"
+            value="intermediaire"
+            class="mr-2"
+            formControlName="difficulte"
+          />
+          Intermédiaire
+        </label>
+        <label class="flex items-center text-[#4A4A4A]">
+          <input
+            type="radio"
+            name="difficulte"
+            value="difficile"
+            class="mr-2"
+            formControlName="difficulte"
+          />
+          Difficile
+        </label>
+      </div>
+    </div>
+
+    <!-- Type de plat -->
+    <div>
+      <label for="typePlat" class="block text-[#4A4A4A] font-semibold mb-2">
+        Type de plat
+      </label>
+      <select
+        id="typePlat"
+        class="w-full border border-[#D1965C] rounded-lg p-3 focus:ring focus:ring-[#D1965C]"
+        formControlName="typePlat"
+      >
+        <option value="">Sélectionnez...</option>
+        <option value="entree">Entrée</option>
+        <option value="plat">Plat principal</option>
+        <option value="dessert">Dessert</option>
+        <option value="autre">Autre</option>
+      </select>
+    </div>
+
+    <!-- Auteur -->
+    <div>
+      <label for="auteur" class="block text-[#4A4A4A] font-semibold mb-2">
+        Auteur
+      </label>
+      <input
+        id="auteur"
+        type="text"
+        placeholder="Exemple : Mamie"
+        class="w-full border border-[#D1965C] rounded-lg p-3 focus:ring focus:ring-[#D1965C]"
+        formControlName="auteur"
+      />
+    </div>
+
+    <!-- Bouton d'envoi -->
+    <div class="text-center">
+      <button
+        type="submit"
+        class="bg-[#D1965C] text-white font-bold py-3 px-6 rounded-lg hover:bg-[#04173D] transition"
+      >
+        Enregistrer la Recette
+      </button>
+    </div>
+  </form>
+</div>

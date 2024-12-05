@@ -1,0 +1,42 @@
+<header class="bg-[#800020] p-6">
+  <div class="flex items-center justify-between">
+    <!-- Logo et Titre -->
+    <div class="flex items-center space-x-4">
+      <img
+        src="..\img\Design_sans_titre__13_-removebg-preview.png"
+        alt="Logo"
+        class="h-12 w-auto"
+      />
+      <h1 class="text-3xl font-bold text-[#F5F3E6]">Recettes Familiales</h1>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+      <ul class="flex space-x-6">
+        <li>
+          <a
+            routerLink="/"
+            class="text-[#F5F3E6] hover:text-[#D1965C] transition duration-300"
+            >Accueil</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/recettes"
+            class="text-[#F5F3E6] hover:text-[#D1965C] transition duration-300"
+            >Recettes</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/form"
+            class="text-[#F5F3E6] hover:text-[#D1965C] transition duration-300"
+            >Ajouter</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<router-outlet></router-outlet>

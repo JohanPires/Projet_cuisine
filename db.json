@@ -1,0 +1,26 @@
+{
+  "recettes": [
+    {
+      "nom": "Tarte aux pomme",
+      "description": "Étalez la pâte, ajoutez les pommes, enfournez.",
+      "ingredients": "200g de farine,3 pommes,150g de sucre",
+      "preparation": 15,
+      "cuisson": 9,
+      "difficulte": "facile",
+      "typePlat": "dessert",
+      "auteur": "Mamie",
+      "id": "1"
+    },
+    {
+      "id": "5152",
+      "nom": "Carotte Rapé",
+      "description": "Carottes rappé avec de la vinaigrette",
+      "ingredients": "300g de carotte, 20cl de sauce vinaigrette",
+      "preparation": 5,
+      "cuisson": 1,
+      "difficulte": "facile",
+      "typePlat": "entree",
+      "auteur": "Johan"
+    }
+  ]
+}
