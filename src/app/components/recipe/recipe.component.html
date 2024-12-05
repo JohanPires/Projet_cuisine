@@ -8,6 +8,8 @@
       name="type"
       id="type"
       class="block w-40 border border-[#D1965C] rounded-lg bg-[#F5F3E6] text-[#04173D] font-medium p-2 focus:outline-none focus:ring-2 focus:ring-[#D1965C] focus:border-[#D1965C] hover:shadow-lg transition-shadow duration-300"
+      [(ngModel)]="selectedType"
+      (ngModelChange)="filter()"
     >
       <option value="entree">Entrée</option>
       <option value="plat">Plat</option>
@@ -19,6 +21,8 @@
       name="difficulte"
       id="difficulte"
       class="block w-40 border border-[#D1965C] rounded-lg bg-[#F5F3E6] text-[#04173D] font-medium p-2 focus:outline-none focus:ring-2 focus:ring-[#D1965C] focus:border-[#D1965C] hover:shadow-lg transition-shadow duration-300"
+      [(ngModel)]="selectedDifficulte"
+      (ngModelChange)="filter()"
     >
       <option value="facile">Facile</option>
       <option value="intermediaire">Intermédiaire</option>
