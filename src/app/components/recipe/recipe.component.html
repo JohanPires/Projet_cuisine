@@ -3,32 +3,62 @@
     Liste des Recettes
   </h1>
   <div class="mt-4 flex space-x-4 justify-center">
-    <!-- Select pour le type de plat -->
-    <select
-      name="type"
-      id="type"
-      class="block w-40 border border-[#D1965C] rounded-lg bg-[#F5F3E6] text-[#04173D] font-medium p-2 focus:outline-none focus:ring-2 focus:ring-[#D1965C] focus:border-[#D1965C] hover:shadow-lg transition-shadow duration-300"
-    >
-      <option value="entree">Entrée</option>
-      <option value="plat">Plat</option>
-      <option value="dessert">Dessert</option>
-    </select>
+    <!-- Label et Select pour le type de plat -->
+    <div class="flex flex-col items-center">
+      <label for="type" class="text-[#04173D] font-semibold mb-2">
+        Type de plat
+      </label>
+      <select
+        name="type"
+        id="type"
+        class="block w-40 border border-[#D1965C] rounded-lg bg-[#F5F3E6] text-[#04173D] font-medium p-2 focus:outline-none focus:ring-2 focus:ring-[#D1965C] focus:border-[#D1965C] hover:shadow-lg transition-shadow duration-300"
+        [(ngModel)]="selectedType"
+        (ngModelChange)="filter()"
+      >
+        <option value="">Tous</option>
+        <option value="entree">Entrée</option>
+        <option value="plat">Plat</option>
+        <option value="dessert">Dessert</option>
+      </select>
+    </div>
 
-    <!-- Select pour la difficulté -->
-    <select
-      name="difficulte"
-      id="difficulte"
-      class="block w-40 border border-[#D1965C] rounded-lg bg-[#F5F3E6] text-[#04173D] font-medium p-2 focus:outline-none focus:ring-2 focus:ring-[#D1965C] focus:border-[#D1965C] hover:shadow-lg transition-shadow duration-300"
-    >
-      <option value="facile">Facile</option>
-      <option value="intermediaire">Intermédiaire</option>
-      <option value="difficile">Difficile</option>
-    </select>
+    <!-- Label et Select pour la difficulté -->
+    <div class="flex flex-col items-center">
+      <label for="difficulte" class="text-[#04173D] font-semibold mb-2">
+        Difficulté
+      </label>
+      <select
+        name="difficulte"
+        id="difficulte"
+        class="block w-40 border border-[#D1965C] rounded-lg bg-[#F5F3E6] text-[#04173D] font-medium p-2 focus:outline-none focus:ring-2 focus:ring-[#D1965C] focus:border-[#D1965C] hover:shadow-lg transition-shadow duration-300"
+        [(ngModel)]="selectedDifficulte"
+        (ngModelChange)="filter()"
+      >
+        <option value="">Tous</option>
+        <option value="facile">Facile</option>
+        <option value="intermediaire">Intermédiaire</option>
+        <option value="difficile">Difficile</option>
+      </select>
+    </div>
+
+    <!-- Label et Input pour le temps de cuisson -->
+    <div class="flex flex-col items-center">
+      <label for="cuisson" class="text-[#04173D] font-semibold mb-2">
+        Temps de cuisson (minutes)
+      </label>
+      <input
+        type="number"
+        id="cuisson"
+        class="block w-40 border border-[#D1965C] rounded-lg bg-[#F5F3E6] text-[#04173D] font-medium p-2 focus:outline-none focus:ring-2 focus:ring-[#D1965C] focus:border-[#D1965C] hover:shadow-lg transition-shadow duration-300"
+        [(ngModel)]="selectedCuisson"
+        (ngModelChange)="filter()"
+      />
+    </div>
   </div>
 
   <ul class="mt-6 space-y-6">
     <li
-      *ngFor="let recette of recettes"
+      *ngFor="let recette of filteredRecettes"
       class="p-6 bg-[#D1965C] rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
     >
       <h2 class="text-2xl font-semibold text-[#04173D]">{{ recette.nom }}</h2>
