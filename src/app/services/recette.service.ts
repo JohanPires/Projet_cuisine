@@ -7,8 +7,8 @@ export interface Recette {
   nom: string;
   description: string;
   ingredients: string[];
-  tempsPreparation: number;
-  tempsCuisson: number;
+  preparation: number;
+  cuisson: number;
   difficulte: string;
   typePlat: string;
   auteur: string;
