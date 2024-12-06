@@ -20,18 +20,6 @@
           "category": "epice",
           "quantity": 50,
           "unit": "g"
-        },
-        {
-          "nom": "Pâte",
-          "category": "autres",
-          "quantity": 1,
-          "unit": "g"
-        },
-        {
-          "nom": "compote",
-          "category": "fruit",
-          "quantity": 50,
-          "unit": "g"
         }
       ],
       "id": "7a2c"
