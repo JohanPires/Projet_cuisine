@@ -1,0 +1,126 @@
+@if(formHide === false) {
+
+<form
+  [formGroup]="ingredientForm"
+  (ngSubmit)="onSubmit()"
+  class="space-y-4 rounded-lg shadow-md p-6"
+>
+  <h2 class="text-xl font-bold text-[#800020] mb-6 text-center">
+    Ajouter des ingrédients
+  </h2>
+  <!-- Champ de texte pour le nom -->
+  <div>
+    <label for="nom" class="block text-sm font-medium text-[#04173D] mb-1"
+      >Nom de l'ingrédient</label
+    >
+    <input
+      id="nom"
+      type="text"
+      placeholder="Exemple : Farine"
+      formControlName="nom"
+      class="w-full border border-[#D1965C] rounded-md p-2 focus:ring-2 focus:ring-[#D1965C] focus:border-[#D1965C] text-[#04173D]"
+    />
+  </div>
+
+  <!-- Champ numérique pour la quantité -->
+  <div>
+    <label for="quantity" class="block text-sm font-medium text-[#04173D] mb-1"
+      >Quantité</label
+    >
+    <input
+      id="quantity"
+      type="number"
+      placeholder="Exemple : 5"
+      formControlName="quantity"
+      class="w-full border border-[#D1965C] rounded-md p-2 focus:ring-2 focus:ring-[#D1965C] focus:border-[#D1965C] text-[#04173D]"
+    />
+  </div>
+
+  <!-- Sélecteur pour l'unité -->
+  <div>
+    <label for="unit" class="block text-sm font-medium text-[#04173D] mb-1"
+      >Unité</label
+    >
+    <select
+      id="unit"
+      name="unit"
+      formControlName="unit"
+      class="w-full border border-[#D1965C] rounded-md p-2 text-[#04173D] focus:ring-2 focus:ring-[#D1965C] focus:border-[#D1965C]"
+    >
+      <option value="">Choisir</option>
+      <option value="ml">ml</option>
+      <option value="cl">cl</option>
+      <option value="l">l</option>
+      <option value="kg">kg</option>
+      <option value="g">g</option>
+      <option value="unité">unité</option>
+    </select>
+  </div>
+
+  <!-- Sélecteur pour la catégorie -->
+  <div>
+    <label for="category" class="block text-sm font-medium text-[#04173D] mb-1"
+      >Catégorie</label
+    >
+    <select
+      id="category"
+      name="category"
+      formControlName="category"
+      class="w-full border border-[#D1965C] rounded-md p-2 text-[#04173D] focus:ring-2 focus:ring-[#D1965C] focus:border-[#D1965C]"
+    >
+      <option value="">Choisir</option>
+      <option value="viande">Viande</option>
+      <option value="legume">Légume</option>
+      <option value="fruit">Fruit</option>
+      <option value="epice">Épice</option>
+      <option value="autres">Autres</option>
+    </select>
+  </div>
+
+  <!-- Bouton de soumission -->
+  <div>
+    <input
+      type="submit"
+      value="Ajouter l'ingrédient"
+      class="bg-[#04173D] text-white font-semibold py-2 px-4 rounded-md hover:bg-[#022B47] transition duration-300 cursor-pointer w-full"
+    />
+  </div>
+</form>
+}
+
+<!-- Liste des ingrédients ajoutés -->
+<div class="mt-6">
+  <h3 class="text-lg font-semibold text-[#04173D] mb-4">
+    Ingrédients ajoutés :
+  </h3>
+  <div
+    *ngFor="let ingredient of ingredientData"
+    class="p-4 bg-[#D1965C] rounded-lg shadow-sm mb-2 text-[#04173D] flex justify-between items-center"
+  >
+    <p class="text-sm">
+      <strong>{{ ingredient.nom }}</strong> : {{ ingredient.quantity }}
+      {{ ingredient.unit }}
+    </p>
+    <button
+      class="bg-[#800020] text-white font-semibold py-2 px-4 rounded-md hover:bg-[#B30033] transition duration-300"
+      (click)="delete(ingredient.nom)"
+    >
+      Delete
+    </button>
+  </div>
+</div>
+
+<!-- Bouton de validation -->
+@if(formHide === false) {
+
+<div class="mt-4">
+  <button
+    (click)="sendIngredient()"
+    class="bg-[#800020] text-white font-semibold py-2 px-4 rounded-md hover:bg-[#B30033] transition duration-300"
+    type="button"
+  >
+    Valider les ingrédients
+  </button>
+</div>
+
+}

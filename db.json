@@ -1,26 +1,64 @@
 {
   "recettes": [
     {
-      "nom": "Carotte Rapé",
-      "description": "Mettre des carottes dans un saladier avec un peu de vinaigrette et mélanger.",
-      "ingredients": "3 carottes, 30cl de vinaigrette",
-      "preparation": 5,
-      "cuisson": 0,
+      "nom": "Tartes aux pommes",
+      "description": "Tarte aux pomme bien sucré comme on aime ",
+      "preparation": 30,
+      "cuisson": 15,
       "difficulte": "facile",
-      "typePlat": "entree",
+      "typePlat": "dessert",
       "auteur": "Mamie",
-      "id": "aab2"
+      "ingredients": [
+        {
+          "nom": "pomme",
+          "category": "fruit",
+          "quantity": 1,
+          "unit": "kg"
+        },
+        {
+          "nom": "Sucre",
+          "category": "epice",
+          "quantity": 50,
+          "unit": "g"
+        },
+        {
+          "nom": "Pâte",
+          "category": "autres",
+          "quantity": 1,
+          "unit": "g"
+        },
+        {
+          "nom": "compote",
+          "category": "fruit",
+          "quantity": 50,
+          "unit": "g"
+        }
+      ],
+      "id": "7a2c"
     },
     {
-      "nom": "Pattes au beurre",
-      "description": "Mettre des pattes dans une casserole et après cuisson rajouter le beurre",
-      "ingredients": "300g de pattes, 20g de beurre",
-      "preparation": 15,
-      "cuisson": 10,
+      "nom": "Patte au beurre",
+      "description": "Le meilleur plat qui puisse existé y'a pas débat",
+      "preparation": 5,
+      "cuisson": 5,
       "difficulte": "facile",
       "typePlat": "plat",
-      "auteur": "Mamie",
-      "id": "1"
+      "auteur": "Johan",
+      "ingredients": [
+        {
+          "nom": "Patte",
+          "category": "autres",
+          "quantity": 100,
+          "unit": "g"
+        },
+        {
+          "nom": "Beurre",
+          "category": "autres",
+          "quantity": 20,
+          "unit": "g"
+        }
+      ],
+      "id": "002f"
     }
   ]
 }
