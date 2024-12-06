@@ -3,6 +3,7 @@ import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import { Recette, RecetteService } from '../../services/recette.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { Ingredient } from '../../services/recette.service';
 
 @Component({
   selector: 'app-recipe',
@@ -18,6 +19,8 @@ export class RecipeComponent implements OnInit {
   selectedDifficulte: string = '';
   selectedType: string = '';
   selectedCuisson: number = 0;
+  selectedCategory: string = '';
+  selectedIngredient: string = '';
   filteredRecettes = [...this.recettes];
 
 
@@ -50,15 +53,26 @@ export class RecipeComponent implements OnInit {
 
 
   filter(): void {
-    console.log(this.selectedCuisson)
-    console.log(this.recettes)
       this.filteredRecettes = this.recettes.filter((recette) => {
         const matchesDifficulte = this.selectedDifficulte ? recette.difficulte === this.selectedDifficulte : true;
         const matchesType = this.selectedType ? recette.typePlat === this.selectedType : true;
 
         const matchesCuisson = this.selectedCuisson ? recette.cuisson <= this.selectedCuisson : true;
 
-        return matchesDifficulte && matchesType && matchesCuisson;
+        const matchesCategory = this.selectedCategory
+        ? Array.isArray(recette.ingredients) && recette.ingredients.some((ingredient: Ingredient) => ingredient.category === this.selectedCategory)
+        : true;
+
+
+
+        const matchesIngredient = this.selectedIngredient
+        ? Array.isArray(recette.ingredients) && recette.ingredients.some((ingredient: Ingredient) =>
+        ingredient.nom.toLowerCase().includes(this.selectedIngredient.toLowerCase())
+        )
+        : true;
+
+
+        return matchesDifficulte && matchesType && matchesCuisson && matchesCategory && matchesIngredient;
       });
   }
 }
