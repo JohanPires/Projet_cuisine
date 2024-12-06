@@ -1,26 +1,52 @@
 {
   "recettes": [
     {
-      "nom": "Tarte aux pomme",
-      "description": "Étalez la pâte, ajoutez les pommes, enfournez.",
-      "ingredients": "200g de farine,3 pommes,150g de sucre",
-      "preparation": 15,
-      "cuisson": 9,
+      "nom": "Tartes aux pommes",
+      "description": "Tarte aux pomme bien sucré comme on aime ",
+      "preparation": 30,
+      "cuisson": 15,
       "difficulte": "facile",
       "typePlat": "dessert",
       "auteur": "Mamie",
-      "id": "1"
+      "ingredients": [
+        {
+          "nom": "pomme",
+          "category": "fruit",
+          "quantity": 1,
+          "unit": "kg"
+        },
+        {
+          "nom": "Sucre",
+          "category": "epice",
+          "quantity": 50,
+          "unit": "g"
+        }
+      ],
+      "id": "7a2c"
     },
     {
-      "id": "5152",
-      "nom": "Carotte Rapé",
-      "description": "Carottes rappé avec de la vinaigrette",
-      "ingredients": "300g de carotte, 20cl de sauce vinaigrette",
+      "nom": "Patte au beurre",
+      "description": "Le meilleur plat qui puisse existé y'a pas débat",
       "preparation": 5,
-      "cuisson": 1,
+      "cuisson": 5,
       "difficulte": "facile",
-      "typePlat": "entree",
-      "auteur": "Johan"
+      "typePlat": "plat",
+      "auteur": "Johan",
+      "ingredients": [
+        {
+          "nom": "Patte",
+          "category": "autres",
+          "quantity": 100,
+          "unit": "g"
+        },
+        {
+          "nom": "Beurre",
+          "category": "autres",
+          "quantity": 20,
+          "unit": "g"
+        }
+      ],
+      "id": "002f"
     }
   ]
 }

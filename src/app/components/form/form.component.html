@@ -32,7 +32,12 @@
     </div>
 
     <!-- Liste d'ingrédients -->
-    <div>
+
+    <app-ingredient
+      (ingredientDataSent)="handleIngredientData($event)"
+    ></app-ingredient>
+
+    <!-- <div>
       <label for="ingredients" class="block text-[#4A4A4A] font-semibold mb-2">
         Liste des ingrédients
       </label>
@@ -43,7 +48,7 @@
         class="w-full border border-[#D1965C] rounded-lg p-3 focus:ring focus:ring-[#D1965C]"
         formControlName="ingredients"
       ></textarea>
-    </div>
+    </div> -->
 
     <!-- Temps de préparation et de cuisson -->
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">

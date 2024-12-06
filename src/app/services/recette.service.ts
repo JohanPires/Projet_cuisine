@@ -2,13 +2,20 @@ import { inject, Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 
+export interface Ingredient {
+  nom: string;
+  category: string;
+  quantity: number;
+  unit: string;
+}
+
 export interface Recette {
   id: number;
   nom: string;
   description: string;
-  ingredients: string[];
-  tempsPreparation: number;
-  tempsCuisson: number;
+  ingredients: Ingredient[];
+  preparation: number;
+  cuisson: number;
   difficulte: string;
   typePlat: string;
   auteur: string;
