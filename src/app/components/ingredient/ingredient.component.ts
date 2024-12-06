@@ -55,6 +55,12 @@ export class IngredientComponent implements OnInit {
 
   delete(nom: string): void {
     this.ingredientData = this.ingredientData.filter((ing) => ing.nom !== nom);
+
+    this.recetteService.getRecette(this.recetteId).subscribe((recette) => {
+    recette.ingredients = recette.ingredients.filter((ing: any) => ing.nom !== nom);
+
+    this.recetteService.updateRecette(this.recetteId, recette).subscribe();
+  });
   }
 
   ngOnInit(): void {
